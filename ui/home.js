@@ -3,8 +3,7 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Image,
-  ImageBackground,
+  Image
 } from 'react-native';
 
 import {
@@ -12,13 +11,13 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { Icon, Text, Button} from 'native-base';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default class Home extends Component {
-
-  render() {
-    return (
+function HomeScreen ({ navigation }) {
+  return (
         <ScrollView>
-            <View >
+            <View>
                 <Image source={require('../image/logo.jpg')} style={styles.logo}/>
                 <Text style={styles.judul}>
                   Quick search
@@ -26,18 +25,96 @@ export default class Home extends Component {
                 <Text style={styles.bwhjudul}>
                   Set your location to start exploring restaurants around you
                 </Text>
-                <Button block light style={styles.btn1}>
-                  <Text>Login</Text>
+                <Button block light>
+            <Text>Login</Text>
+             </Button>
+            <Button iconRight light style={styles.btn1}
+            onPress={() => navigation.navigate('Next')}>
+                <Text>Next</Text>
+                <Icon name='arrow-forward' />
                 </Button>
-                <Button iconRight light>
-            <Text>Next</Text>
-            <Icon name='arrow-forward' />
-          </Button>
             </View>
         </ScrollView>
     );
   }
-}
+
+  function NextScreen({ navigation }) {
+    return (
+        <ScrollView>
+        <View >
+            <Image source={require('../image/logo.jpg')} style={styles.logo}/>
+            <Text style={styles.judul}>
+              Variety of food
+            </Text>
+            <Text style={styles.bwhjudul}>
+              Set your location to start exploring restaurants around you
+            </Text>
+            <Button block light>
+            <Text>Login</Text>
+             </Button>
+            <Button iconRight light style={styles.btn1}
+            onPress={() => navigation.navigate('Two')}>
+                <Text>Next</Text>
+                <Icon name='arrow-forward' />
+                </Button>
+            <Button iconLeft light onPress={() => navigation.goBack()}>
+            <Text>Go Back</Text>
+                <Icon name='arrow-back' />
+            </Button>
+        </View>
+    </ScrollView>
+    );
+  }
+
+  function TwoScreen({ navigation }) {
+    return (
+        <ScrollView>
+        <View >
+            <Image source={require('../image/logo.jpg')} style={styles.logo}/>
+            <Text style={styles.judul}>
+              Search for a place
+            </Text>
+            <Text style={styles.bwhjudul}>
+              Set your location to start exploring restaurants around you
+            </Text>
+            <Button block light>
+            <Text>Login</Text>
+             </Button>
+            <Button iconRight light style={styles.btn1}
+            onPress={() => navigation.navigate('End')}>
+                <Text>Next</Text>
+                <Icon name='arrow-forward' /></Button>
+            <Button iconLeft light onPress={() => navigation.goBack()}>
+            <Text>Go Back</Text>
+                <Icon name='arrow-back' />
+            </Button>
+        </View>
+    </ScrollView>
+    );
+  }
+  function EndScreen({ navigation }) {
+    return (
+        <ScrollView>
+        <View >
+            <Image source={require('../image/logo.jpg')} style={styles.logo}/>
+            <Text style={styles.judul}>
+              Fast shipping
+            </Text>
+            <Text style={styles.bwhjudul}>
+              Set your location to start exploring restaurants around you
+            </Text>
+            <Button block light
+                        onPress={() => { this.props.navigation.navigate('Login') }} >
+                        <Text style={styles.text}>Login</Text>
+                    </Button>
+            <Button iconLeft light onPress={() => navigation.goBack()}>
+            <Text>Go Back</Text>
+                <Icon name='arrow-back' />
+            </Button>
+        </View>
+    </ScrollView>
+    );
+  }
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -69,15 +146,6 @@ const styles = StyleSheet.create({
   btn1: {
     marginLeft: 50,
     marginRight: 50,
-    marginTop: 200,
-  },
-  login: {
-    marginTop: 30,
-    marginBottom: 100,
-    marginEnd: 20,
-    alignSelf: 'center', 
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#fafafa'
+    marginTop: 300,
   },
 });

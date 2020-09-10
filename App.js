@@ -13,7 +13,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeUi from './ui/home';
 import LoginUi from './ui/login';
-//import UpdateCrud from './crud/update';
+import Hal1Ui from './ui/hal1';
 
 const Stack = createStackNavigator();
 
@@ -24,7 +24,8 @@ export default class App extends Component {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeUi} />
         <Stack.Screen name="Login" component={LoginUi} />
-        <Stack.Screen name="Update" component={UpdateCrud} />
+        <Stack.Screen name="Hal1" component={Hal1Ui} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
     );

@@ -26,7 +26,7 @@ export default class App extends Component {
       <NavigationContainer>
       <Stack.Navigator screenOptions={{
           headerShown: false}}>
-        <Stack.Screen name="Home" component={HomeUi} />
+        <Stack.Screen name="Home" component={HomeUi}/>
         <Stack.Screen name="Login" component={LoginUi} />
         <Stack.Screen name="SignUp" component={SignUi}/>
         <Stack.Screen name="Verify" component={VerifyUi}/>

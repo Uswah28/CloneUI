@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { Container, Button, Content, Form, Item, View, Input, Label } from 'native-base';
 
-export default class Login extends Component {
+export default class Forgot extends Component {
 
   render() {
     return (
@@ -12,28 +12,18 @@ export default class Login extends Component {
         <Content>
           <View style={styles.item}>
             <Text style={styles.text}> 
-              Log in
+              Forgot Password?
             </Text>
+            <Text style={styles.text5}>Please enter your email</Text>
           <Form>
-            <Item floatingLabel >
+          <Item floatingLabel >
               <Label>Email</Label>
               <Input />
             </Item>
-            <Item floatingLabel>
-              <Label>Password</Label>
-              <Input />
-            </Item>
-            <Text style={styles.text2} 
-            onPress={() => this.props.navigation.navigate('Forgot')}>
-              Forgot password?</Text>
-          </Form>
           <Button block light style={styles.btn1}>
-            <Text style={styles.text3}>Login</Text>
+            <Text style={styles.text3}>Submit</Text>
              </Button>
-             <Text style={styles.text4}
-                onPress={() => this.props.navigation.navigate('SignUp')}>
-                    Sign up an account
-                </Text>
+          </Form>
           </View>
         </Content>
       </Container>
@@ -42,18 +32,18 @@ export default class Login extends Component {
 }
 const styles = StyleSheet.create({
   text: {
+    marginTop: 40,
     fontWeight: 'bold',
-    alignSelf: 'center', 
-    fontSize: 50,
-    marginTop: 50,
-    marginBottom: 30,
+    fontSize: 30,
+    fontFamily: 'mono',
+    textAlign: 'center'
   },
   text2: {
     color:'blue',
     fontSize: 13,
     marginRight:10,
-    marginLeft: 244,
-    marginTop: 20
+    marginTop: 5,
+    textAlign: 'center'
   },
   text3:{
     fontSize: 20,
@@ -64,14 +54,23 @@ const styles = StyleSheet.create({
     color: 'blue', 
     fontSize: 20,
     alignSelf: 'center',
-    marginTop: 130
+    marginTop: 150
+  },
+  text5:{
+    alignSelf: 'center',
+    fontSize: 20,
+    fontFamily: 'notoserif',
+    color: '#bdbdbd',
+    marginTop: 10,
+    marginBottom: 30,
+    textAlign: 'center'
   },
   btn1: {
     backgroundColor:'#ffe44c',
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 40,
-    marginBottom: 140,
+    marginLeft: 15,
+    marginRight: 5,
+    marginTop: 50,
+    marginBottom: 20,
   },
   item: {
     marginRight:10

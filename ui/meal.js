@@ -3,8 +3,8 @@ import {
   StyleSheet, Text
 } from 'react-native';
 import { Container, Button, Content, Form, Item, View, Input, Label } from 'native-base';
-import CodeInput from 'react-native-confirmation-code-input';
-export default class Verify extends Component {
+
+export default class Restaurant extends Component {
 
   render() {
     return (
@@ -16,15 +16,7 @@ export default class Verify extends Component {
             </Text>
             <Text style={styles.text5}>Enter your code here</Text>
           <Form>
-          <CodeInput
-      ref="codeInputRef1"
-      secureTextEntry
-      className={'border-b'}
-      space={4}
-      size={30}
-      inputPosition='center'
-      onFulfill={(code) => this._onFulfill(code)}
-    />
+          
           <Button block light style={styles.btn1}
           onPress={() => this.props.navigation.navigate('City')}>
             <Text style={styles.text3}>Verify Now</Text>

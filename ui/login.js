@@ -27,7 +27,7 @@ export default class Login extends Component {
             onPress={() => this.props.navigation.navigate('Forgot')}>
               Forgot password?</Text>
           </Form>
-          <Button block light style={styles.btn1} onPress={() => this.props.navigation.navigate('Food')}>
+          <Button block warning style={styles.btn1} onPress={() => this.props.navigation.navigate('Food')}>
             <Text style={styles.text3}>Login</Text>
              </Button>
              <Text style={styles.text4}
@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     marginTop: 130
   },
   btn1: {
-    backgroundColor:'#ffe44c',
     marginLeft: 10,
     marginRight: 10,
     marginTop: 40,

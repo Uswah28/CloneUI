@@ -1,74 +1,69 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
-  StyleSheet, Text
+  StyleSheet,
+  ScrollView,
+  View,
+  ImageBackground,
+  Dimensions
 } from 'react-native';
-import { Container, Button, Content, Form, Item, View, Input, Label } from 'native-base';
-
+import { Container, Header, Title, Content, Button, Icon, Right, Left, Body, Text } from "native-base";
+const {width} = Dimensions.get("window");
+const height = width * 0.7;
 export default class Restaurant extends Component {
-
   render() {
     return (
-      <Container>
+      <ScrollView>
+        <View>
+        <ImageBackground source={{uri: 'https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?cs=srgb&dl=pexels-kaboompics-com-6267.jpg&fm=jpg'}} 
+                    style={styles.gambar2}>
+        <Header transparent>
+          <Left>
+            <Button transparent>
+              <Icon name="arrow-back" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Transparent</Title>
+          </Body>
+          <Right>
+            <Button transparent>
+              <Text>Cancel</Text>
+            </Button>
+          </Right>
+        </Header>
         <Content>
-          <View style={styles.item}>
-            <Text style={styles.text}> 
-              Verify your Mobile
-            </Text>
-            <Text style={styles.text5}>Enter your code here</Text>
-          <Form>
-          
-          <Button block light style={styles.btn1}
-          onPress={() => this.props.navigation.navigate('City')}>
-            <Text style={styles.text3}>Verify Now</Text>
-             </Button>
-          </Form>
-          </View>
+          <Text style={styles.judul}>
+            Blacksmith {"\n"}Cafe
+          </Text>
         </Content>
-      </Container>
+        </ImageBackground>
+        <Button full warning
+          onPress={() => this.props.navigation.navigate('City')}>
+            <Text style={styles.text3}>Order Food Online</Text>
+             </Button>
+      </View>
+      </ScrollView>
     );
   }
 }
 const styles = StyleSheet.create({
-  text: {
-    marginTop: 40,
-    fontWeight: 'bold',
-    fontSize: 30,
-    fontFamily: 'mono',
-    textAlign: 'center'
-  },
-  text2: {
-    color:'blue',
-    fontSize: 13,
-    marginRight:10,
-    marginTop: 5,
-    textAlign: 'center'
-  },
   text3:{
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 15,
+    fontFamily: 'mono',
     color:'#fff'
   },
-  text4:{
-    color: 'blue', 
-    fontSize: 15,
-    alignSelf: 'center',
-    marginTop: 150
+  judul: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 90,
+    marginLeft: 10,
+    fontFamily: 'mono',
   },
-  text5:{
-    alignSelf: 'center',
-    fontSize: 20,
-    fontFamily: 'notoserif',
-    color: '#bdbdbd',
-    textAlign: 'center'
-  },
-  btn1: {
-    backgroundColor:'#ffe44c',
-    marginLeft: 15,
-    marginRight: 5,
-    marginTop: 50,
-    marginBottom: 20,
-  },
-  item: {
-    marginRight:10
-  }
+gambar2:{
+  height, 
+  width, 
+  flex: 1,
+  borderRadius: 500
+}
 });

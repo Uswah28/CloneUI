@@ -20,12 +20,36 @@ export default class Verify extends Component {
       ref="codeInputRef1"
       secureTextEntry
       className={'border-b'}
-      space={4}
+      space={5}
       size={30}
       inputPosition='center'
       onFulfill={(code) => this._onFulfill(code)}
     />
-          <Button block light style={styles.btn1}
+    <CodeInput
+      ref="codeInputRef2"
+      secureTextEntry
+      compareWithCode='AsDW2'
+      activeColor='#000'
+      inactiveColor='#000'
+      autoFocus={false}
+      ignoreCase={true}
+      inputPosition='center'
+      size={50}
+      onFulfill={(isValid) => this._onFinishCheckingCode1(isValid)}
+      containerStyle={{ marginTop:10 }}
+      codeInputStyle={{ borderWidth: 1.5 }}
+    />
+    <CodeInput
+      ref="codeInputRef2"
+      keyboardType="numeric"
+      codeLength={5}
+      className='border-circle'
+      compareWithCode='1234'
+      autoFocus={false}
+      codeInputStyle={{ fontWeight: '800' }}
+      onFulfill={(isValid, code) => this._onFinishCheckingCode2(isValid, code)}
+    />
+          <Button block warning style={styles.btn1}
           onPress={() => this.props.navigation.navigate('City')}>
             <Text style={styles.text3}>Verify Now</Text>
              </Button>
@@ -70,7 +94,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   btn1: {
-    backgroundColor:'#ffe44c',
     marginLeft: 15,
     marginRight: 5,
     marginTop: 50,

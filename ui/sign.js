@@ -28,7 +28,7 @@ export default class SignUp extends Component {
               <Label>Password</Label>
               <Input />
             </Item>
-          <Button block light style={styles.btn1}
+          <Button block warning style={styles.btn1}
           onPress={() => this.props.navigation.navigate('Verify')}>
             <Text style={styles.text3}>Sign up</Text>
              </Button>
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   btn1: {
-    backgroundColor:'#ffe44c',
     marginLeft: 15,
     marginRight: 5,
     marginTop: 50,

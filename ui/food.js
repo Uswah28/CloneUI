@@ -8,7 +8,8 @@ import {
   Dimensions
 } from 'react-native';
 
-import { Container, Form, Input, Item, Header, Icon, List, ListItem, Left, Card, CardItem, Body, Title, Right } from 'native-base';
+import {Footer, FooterTab, Button, Container, Form, Input, Item, Header, 
+  Icon, List, ListItem, Left, Card, CardItem, Body, Title, Right } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
 const image = [
@@ -200,7 +201,7 @@ export default class Food extends Component {
               <Text style={styles.most}>Popular Restaurant</Text>
               </Left>
               <Right>
-              <Text style={styles.see} onPress={() => this.props.navigation.navigate('Restaurant')}>See all</Text>
+              <Text style={styles.see} onPress={() => this.props.navigation.navigate('Place')}>See all</Text>
               </Right>
             </ListItem>
             </List>
@@ -243,11 +244,30 @@ export default class Food extends Component {
             </View>
           </View>
         </ScrollView>
+        <Footer style={styles.footer}>
+          <FooterTab style={styles.footer}>
+            <Button style={styles.footer}>
+              <Icon style={styles.icon} name="home" onPress={() => this.props.navigation.navigate('Food')}/>
+            </Button>
+            <Button>
+              <Icon type='MaterialIcons' name="place"/>
+            </Button>
+            <Button >
+              <Icon name="heart" />
+            </Button>
+            <Button>
+              <Icon name="person" />
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
 }
 const styles = StyleSheet.create({
+  footer:{
+    backgroundColor: 'white'
+  },
   backgroundImage: {
     flex: 1,
     resizeMode: 'stretch',
@@ -345,7 +365,7 @@ const styles = StyleSheet.create({
     marginLeft: -28
   },
   text2: {
-    color: 'blue',
+    color: '#00ddbf',
     fontSize: 13,
     marginRight: 10,
     marginLeft: 244,
@@ -385,7 +405,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   see:{
-    color: 'blue',
+    color: '#00ddbf',
     fontWeight: 'bold',
     fontSize: 18,
   },

@@ -7,11 +7,11 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
-import {List, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
+import {List, Content, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
   CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
 const height = width * 0.7;
-export default class Most extends Component {
+export default class Place extends Component {
   render() {
     return (
       <Container>
@@ -32,10 +32,11 @@ export default class Most extends Component {
               </Button>
           </Right>
         </Header>
-        </ImageBackground>
+        <Content>
           <Text style={styles.judul}>
-            Trending
-          </Text>
+            Asia{"\n"}Restaurant</Text>
+        </Content>
+        </ImageBackground>
           <List>
           <ListItem>
               <Left>
@@ -165,13 +166,14 @@ const styles = StyleSheet.create({
   text:{
     color:'white',
     fontSize: 20,
-    marginLeft: 2
+    marginLeft: 2,
+    fontWeight: 'bold'
   },
   footer:{
     backgroundColor: 'white'
   },
   judul: {
-    color: '#000',
+    color: '#fff',
     fontSize: 50,
     fontWeight: 'bold',
     marginTop: 10,

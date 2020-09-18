@@ -21,6 +21,7 @@ import FoodUi from './ui/food';
 import RestaurantUi from './ui/restaurant';
 import MealUi from './ui/meal';
 import MostUi from './ui/most';
+import PlaceUi from './ui/place';
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,7 @@ export default class App extends Component {
         <Stack.Screen name="Restaurant" component={RestaurantUi}/>
         <Stack.Screen name="Meal" component={MealUi}/>
         <Stack.Screen name="Most" component={MostUi}/>
+        <Stack.Screen name="Place" component={PlaceUi}/>
       </Stack.Navigator>
     </NavigationContainer>
     );

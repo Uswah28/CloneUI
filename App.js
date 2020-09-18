@@ -22,6 +22,8 @@ import RestaurantUi from './ui/restaurant';
 import MealUi from './ui/meal';
 import MostUi from './ui/most';
 import PlaceUi from './ui/place';
+import FavouriteUi from './ui/favourite';
+import FilterUi from './ui/filter';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +44,8 @@ export default class App extends Component {
         <Stack.Screen name="Meal" component={MealUi}/>
         <Stack.Screen name="Most" component={MostUi}/>
         <Stack.Screen name="Place" component={PlaceUi}/>
+        <Stack.Screen name="Favourite" component={FavouriteUi}/>
+        <Stack.Screen name="Filter" component={FilterUi}/>
       </Stack.Navigator>
     </NavigationContainer>
     );

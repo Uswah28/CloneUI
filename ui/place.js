@@ -10,14 +10,14 @@ import {
 import {List, Content, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
   CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
-const height = width * 0.7;
+const height = width * 1;
 export default class Place extends Component {
   render() {
     return (
       <Container>
       <ScrollView>
         <View>
-        <ImageBackground source={{uri: 'https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
+        <ImageBackground source={{uri: 'https://images.pexels.com/photos/2878741/pexels-photo-2878741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
                     style={styles.gambar2}>
         <Header transparent>
           <Left>
@@ -43,51 +43,34 @@ export default class Place extends Component {
             <Text style={styles.txt3}>20 Restaurants</Text>
             </Left>
             <Right>
-            <Text style={styles.txt2}>Filter</Text>
+            <Text style={styles.txt2} onPress={() => this.props.navigation.navigate('Filter')}>Filter</Text>
             </Right>
             </ListItem>
           </List>
           <Card style={styles.view}>
             <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Good Thai
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
+            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
+            <Text style={styles.txt3}>Good Thai</Text>{"\n"}
+            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
             <Button warning style={styles.btn}><Text style={styles.text}> 4.8 </Text></Button>
             <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
             </CardItem>
           </Card>
           <Card>
             <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Sushi Car 
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button danger style={styles.btn}><Text style={styles.text}> 3.8 </Text></Button>
+            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
+            <Text style={styles.txt3}>Spice Alley</Text>{"\n"}
+            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
+            <Button danger style={styles.btn}><Text style={styles.text}> 3.2 </Text></Button>
             <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
             </CardItem>
           </Card>
           <Card>
             <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Blacksmith Cafe
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button warning style={styles.btn2}><Text style={styles.text}> 4.8 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Pizza Box
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button warning style={styles.btn}><Text style={styles.text}> 4.2 </Text></Button>
+            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
+            <Text style={styles.txt3}>Canton House</Text>{"\n"}
+            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
+            <Button danger style={styles.btn2}><Text style={styles.text}> 3.6 </Text></Button>
             <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
             </CardItem>
           </Card>
@@ -102,7 +85,7 @@ export default class Place extends Component {
               <Icon type='MaterialIcons' name="place"/>
             </Button>
             <Button >
-              <Icon name="heart" />
+              <Icon name="heart" onPress={() => this.props.navigation.navigate('Favourite')}/>
             </Button>
             <Button>
               <Icon name="person" />
@@ -125,14 +108,14 @@ const styles = StyleSheet.create({
     width: 40,
     height: 30,
     textAlign: "center",
-    marginLeft: 65,
+    marginLeft: 165,
     borderRadius: 5
   },
   btn:{
     width: 40,
     height: 30,
     textAlign: "center",
-    marginLeft: 90,
+    marginLeft: 175,
     borderRadius: 5
   },
   view: {
@@ -166,8 +149,7 @@ const styles = StyleSheet.create({
   text:{
     color:'white',
     fontSize: 20,
-    marginLeft: 2,
-    fontWeight: 'bold'
+    marginLeft: 2
   },
   footer:{
     backgroundColor: 'white'
@@ -176,12 +158,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 50,
     fontWeight: 'bold',
-    marginTop: 10,
-    marginLeft: 10,
+    marginTop: 50,
+    textAlign:"center",
     fontFamily: 'mono',
-  },
-  gambar:{
-    borderRadius: 10
   },
 gambar2:{
   height, 

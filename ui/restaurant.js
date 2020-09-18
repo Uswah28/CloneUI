@@ -281,7 +281,7 @@ export default class Restaurant extends Component {
               <Icon type='MaterialIcons' name="place"/>
             </Button>
             <Button >
-              <Icon name="heart" />
+              <Icon name="heart" onPress={() => this.props.navigation.navigate('Favourite')}/>
             </Button>
             <Button>
               <Icon name="person" />

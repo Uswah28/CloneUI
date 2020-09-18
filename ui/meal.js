@@ -20,7 +20,7 @@ export default class Meal extends Component {
         <Header style={styles.header}>
           <Left>
             <Icon name='arrow-back' style={styles.icon}
-              onPress={() => this.props.navigation.navigate('Login')} />
+              onPress={() => this.props.navigation.navigate('Food')} />
           </Left>
           <Body style={styles.body}>
             <Title style={styles.text5}>Collections</Title>
@@ -85,7 +85,7 @@ export default class Meal extends Component {
               <Icon type='MaterialIcons' name="place"/>
             </Button>
             <Button >
-              <Icon name="heart" />
+              <Icon name="heart" onPress={() => this.props.navigation.navigate('Favourite')}/>
             </Button>
             <Button>
               <Icon name="person" />

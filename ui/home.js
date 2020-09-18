@@ -10,13 +10,12 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Text, Button} from 'native-base';
+import {Text, Container, Button} from 'native-base';
 export default class Home extends Component {
 
   render() {
   return (
-        <ScrollView>
-            <View style={styles.background}>
+        <Container style={styles.background}>
             <Image source={require('../image/logo.png')} style={styles.logo}/>
               <Text style={styles.judul}>
                   Quick search
@@ -30,8 +29,7 @@ export default class Home extends Component {
                   this.props.navigation.navigate('Login')}>
             <Text style={styles.text}>Login</Text>
              </Button>
-            </View>
-        </ScrollView>
+        </Container>
     );
   }
 }
@@ -75,6 +73,6 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 10,
     marginTop: 100,
-    marginBottom:167
+    marginBottom:150
   },
 });

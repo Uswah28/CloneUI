@@ -7,7 +7,7 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
-import {List, Content, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
+import {List, Content, ListItem, Header, Card, Footer, FooterTab, 
   CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
 const height = width * 1;

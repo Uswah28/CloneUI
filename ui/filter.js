@@ -30,49 +30,61 @@ export default class Filter extends Component {
         <View style={styles.view}>
             <Card>
                   <CardItem cardBody style={styles.card}>
+                    <Button transparent style={styles.card}>
                   <ImageBackground square large source={require('../image/mug.png')}
                   style={styles.gambar}/>
                   <Text style={styles.bawah3}>Bar & Hotels
                   <Text style={styles.rat}>{"\n"}           12 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   <Card>
                   <CardItem cardBody style={styles.card}>
+                  <Button transparent style={styles.card}>
                   <ImageBackground square large source={require('../image/dining.png')}
                   style={styles.gambar}/>
                   <Text style={styles.bawah3}>Fine Dining
                   <Text style={styles.rat}>{"\n"}           15 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   </View>
                   <View style={styles.view}>
                   <Card>
                   <CardItem cardBody style={styles.card}>
+                  <Button transparent style={styles.card}>
                   <ImageBackground square large source={require('../image/kopi.png')}
                   style={styles.gambar}/>
                   <Text style={styles.bawah}>Cafes
                   <Text style={styles.rat}>{"\n"}28 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   <Card>
                   <CardItem cardBody style={styles.card2}>
+                  <Button active style={styles.card2}>
                   <ImageBackground square large source={require('../image/nearby.png')}
                   style={styles.gambar}/>
                   <Text style={styles.bawah}>Nearby
                   <Text style={styles.rat}>{"\n"}  34 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   </View>
                   <View style={styles.view}>
                   <Card>
                   <CardItem cardBody style={styles.card}>
+                  <Button transparent style={styles.card}>
                   <ImageBackground square large source={require('../image/foods.png')}
                   style={styles.gambar}/>
                   <Text style={styles.bawah3}>Fast Foods
                   <Text style={styles.rat}>{"\n"}           29 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   <Card>
                   <CardItem cardBody style={styles.card}>
+                  <Button transparent style={styles.card}>
                   <ImageBackground square large source={require('../image/pizza.png')}
                   style={styles.gambar}/>
-                  <Text style={styles.bawah3}>Featured Foods
+                  <Text style={styles.bawah2}>Featured Foods
                   <Text style={styles.rat}>{"\n"}           21 Places</Text></Text>
+                  </Button>
                   </CardItem></Card>
                   </View>
         </ScrollView>
@@ -151,6 +163,13 @@ const styles = StyleSheet.create({
   bawah3:{
     fontSize: 20,
     marginRight: 50,
+    color: '#000',
+    marginTop: 100,
+  },
+  bawah2:{
+    fontSize: 17,
+    marginRight: 60,
+    marginLeft: -10,
     color: '#000',
     marginTop: 100,
   },

@@ -32,7 +32,7 @@ export default class SignUp extends Component {
           onPress={() => this.props.navigation.navigate('Verify')}>
             <Text style={styles.text3}>Sign up</Text>
              </Button>
-             <Text style={styles.text2} >
+             <Text style={styles.text2} onPress={() => this.props.navigation.navigate('Action')}>
               Term & Conditions</Text>
           </Form>
              <Text style={styles.text4}

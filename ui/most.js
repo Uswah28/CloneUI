@@ -8,11 +8,82 @@ import {
   Text
 } from 'react-native';
 import {List, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
-  CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
+  CardItem, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
+  import { ActionSheetCustom as ActionSheet } from 'react-native-custom-actionsheet'
+
+const CANCEL_INDEX = 0
+const DESTRUCTIVE_INDEX = 6
+const options = [
+  'Cancel',
+{
+  component: <Text style={{fontSize: 12, color: '#bdbdbd', alignSelf: 'flex-start', marginLeft: 10}}>
+    {"\n"}Quick filter</Text>,
+  height: 40
+},
+{
+  component: <ListItem selected={false} >
+      <Text style={{ marginRight: 250 }}>Rated 5  </Text>
+      <Radio color={"#f0ad4e"} selectedColor={"#f0ad4e"} selected={true}/></ListItem>,
+    height: 50
+  },
+  {component: <ListItem selected={false} >
+      <Text style={{ marginRight: 250 }}>Rated 4+</Text>
+      <Radio color={"#f0ad4e"} selectedColor={"#f0ad4e"} selected={true}/></ListItem>,
+    height: 50
+  },
+  {
+    component: <ListItem selected={false} >
+      <Text style={{ marginRight: 250 }}>Rated 3+</Text>
+      <Radio color={"#f0ad4e"} selectedColor={"#f0ad4e"} selected={true}/></ListItem>,
+    height: 50
+  },
+  {
+    component: <Text style={{fontSize: 12, color: '#bdbdbd', alignSelf: 'flex-start', marginLeft: 10}}>
+    {"\n"}Sort by</Text>,
+  height: 40
+  },
+  {
+    component: <ListItem selected={false} >
+      <Text style={{ marginRight: 250 }}>Close to me</Text>
+      <Radio color={"#888"} selectedColor={"#5cb85c"} selected={false}/></ListItem>,
+    height: 50
+  },
+  {
+    component: <ListItem selected={false} >
+      <Text style={{ marginRight: 225 }}>Price high to low</Text>
+      <Radio color={"#888"} selectedColor={"#5cb85c"} selected={false}/></ListItem>,
+    height: 50
+  },
+  {
+    component: <ListItem selected={false} >
+      <Text style={{ marginRight: 225 }}>Price low to high</Text>
+      <Radio color={"#888"} selectedColor={"#888"} selected={false}/></ListItem>,
+    height: 50
+  },
+  {
+    component: <Button disabled block style={{ marginLeft: 10, marginRight: 10, marginBottom: 5 }}>
+      <Text style={{ color: 'white', fontWeight: 'bold', textAlignVertical: 'center' }}>
+    Apply</Text></Button>,
+    height: 70
+  }
+]
+const title = <Text style={{ color: '#000', fontSize: 30, fontWeight: 'bold', alignSelf: 'flex-start', marginLeft: 10 }}>
+  Filter</Text>;
 const {width} = Dimensions.get("window");
 const height = width * 0.7;
 export default class Most extends Component {
+  state = {
+    selected: 1
+  }
+
+  showActionSheet = () => this.actionSheet.show()
+
+  getActionSheetRef = ref => (this.actionSheet = ref)
+
+  //handlePress = index => this.setState({ selected: index })
   render() {
+    const { selected } = this.state
+    const selectedText = options[selected].component || options[selected]
     return (
       <Container>
       <ScrollView>
@@ -42,10 +113,18 @@ export default class Most extends Component {
             <Text style={styles.txt3}>20 Restaurants</Text>
             </Left>
             <Right>
-            <Text style={styles.txt2}>Filter</Text>
+            <Text style={styles.txt2} onPress={this.showActionSheet}>Filter</Text>
             </Right>
             </ListItem>
           </List>
+          <ActionSheet
+          ref={this.getActionSheetRef}
+          title={title}
+          options={options}
+          cancelButtonIndex={CANCEL_INDEX}
+          destructiveButtonIndex={DESTRUCTIVE_INDEX}
+          //onPress={this.handlePress}
+        />
           <Card style={styles.view}>
             <CardItem>
             <Thumbnail square large source={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 

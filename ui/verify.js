@@ -23,7 +23,7 @@ export default class Verify extends Component {
       space={5}
       size={30}
       inputPosition='center'
-      onFulfill={(code) => this._onFulfill(code)}
+      //onFulfill={(code) => this._onFulfill(code)}
     />
     <CodeInput
       ref="codeInputRef2"
@@ -31,11 +31,11 @@ export default class Verify extends Component {
       compareWithCode='AsDW2'
       activeColor='#000'
       inactiveColor='#000'
-      autoFocus={false}
-      ignoreCase={true}
+      //autoFocus={false}
+      //ignoreCase={true}
       inputPosition='center'
       size={50}
-      onFulfill={(isValid) => this._onFinishCheckingCode1(isValid)}
+      //onFulfill={(isValid) => this._onFinishCheckingCode1(isValid)}
       containerStyle={{ marginTop:10 }}
       codeInputStyle={{ borderWidth: 1.5 }}
     />
@@ -44,10 +44,10 @@ export default class Verify extends Component {
       keyboardType="numeric"
       codeLength={5}
       className='border-circle'
-      compareWithCode='1234'
-      autoFocus={false}
+      //compareWithCode='1234'
+      //autoFocus={false}
       codeInputStyle={{ fontWeight: '800' }}
-      onFulfill={(isValid, code) => this._onFinishCheckingCode2(isValid, code)}
+      //onFulfill={(isValid, code) => this._onFinishCheckingCode2(isValid, code)}
     />
           <Button block warning style={styles.btn1}
           onPress={() => this.props.navigation.navigate('City')}>

@@ -272,22 +272,7 @@ export default class Restaurant extends Component {
               </List>
             </View>
       </ScrollView>
-      <Footer>
-          <FooterTab style={styles.footer}>
-            <Button style={styles.footer}>
-              <Icon name="home" onPress={() => this.props.navigation.navigate('Food')}/>
-            </Button>
-            <Button>
-              <Icon type='MaterialIcons' name="place"/>
-            </Button>
-            <Button >
-              <Icon name="heart" onPress={() => this.props.navigation.navigate('Favourite')}/>
-            </Button>
-            <Button>
-              <Icon name="person" />
-            </Button>
-          </FooterTab>
-        </Footer>
+      
     </Container>
     );
   }

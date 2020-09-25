@@ -244,7 +244,7 @@ export default class Food extends Component {
             </View>
           </View>
         </ScrollView>
-        <Footer style={styles.footer}>
+        {/*<Footer style={styles.footer}>
           <FooterTab style={styles.footer}>
             <Button style={styles.footer}>
               <Icon style={styles.icon} name="home" onPress={() => this.props.navigation.navigate('Food')}/>
@@ -259,7 +259,7 @@ export default class Food extends Component {
               <Icon name="person" />
             </Button>
           </FooterTab>
-        </Footer>
+        </Footer>*/}
       </Container>
     );
   }

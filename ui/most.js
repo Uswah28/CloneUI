@@ -151,7 +151,7 @@ export default class Most extends Component {
             <CardItem>
             <Thumbnail square large source={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
             style={styles.gambar}/>
-            <Text style={styles.txt3}>Blacksmith Cafe
+            <Text style={styles.txt3} onPress={() => this.props.navigation.navigate('Restaurant')}>Blacksmith Cafe 
             <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
             {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
             <Button warning style={styles.btn2}><Text style={styles.text}> 4.8 </Text></Button>

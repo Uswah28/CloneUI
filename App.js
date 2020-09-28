@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import HomeUi from './ui/home';
 import LoginUi from './ui/login';
@@ -28,11 +29,13 @@ import PlaceUi from './ui/place';
 import FilterUi from './ui/filter';
 
 //Screen Maps
+import MapsUi from './ui/mapp';
 
 //Screen Favorite
 import FavouriteUi from './ui/favourite';
 
 //Screen Profile
+import ProfileUi from './ui/profile';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -63,6 +66,7 @@ function StackMaps() {
       screenOptions={{
         headerShown: false
       }}>
+        <MapsStk.Screen name="Mapp" component={MapsUi} />
     </MapsStk.Navigator>
 
   )
@@ -86,6 +90,7 @@ function StackProfile() {
       screenOptions={{
         headerShown: false
       }}>
+        <ProfileStk.Screen name="Profile" component={ProfileUi} />
     </ProfileStk.Navigator>
 
   )
@@ -98,26 +103,24 @@ function MyTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Homes') {
-            iconName = focused
-              ? 'search-outline'
-              : 'ios-search-outline';
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'md-home-outline';
           } else if (route.name === 'Maps') {
-            iconName = focused ? 'ios-heart-outline' : 'md-heart-outline';
+            iconName = focused ? 'location' : 'md-location-outline';
           } else if (route.name === 'Fav') {
-            iconName = focused ? 'ios-heart-outline' : 'md-heart-outline';
+            iconName = focused ? 'heart' : 'md-heart-outline';
           }else if (route.name === 'Profile') {
-            iconName = focused ? 'ios-person-outline' : 'ios-person-outline';
+            iconName = focused ? 'person' : 'md-person-outline';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{
-        activeTintColor: '#00695c',
-        inactiveTintColor: '#00ddbf'
+        activeTintColor: '#ffe44c',
+        inactiveTintColor: '#888'
       }}
     >
-      <Tab.Screen name="Homes" component={StackHomes} />
+      <Tab.Screen name="Home" component={StackHomes} />
       <Tab.Screen name="Maps" component={StackMaps} />
       <Tab.Screen name="Fav" component={StackFav} />
       <Tab.Screen name="Profile" component={StackProfile} />
@@ -137,13 +140,15 @@ export default class App extends Component {
         <Stack.Screen name="Verify" component={VerifyUi}/>
         <Stack.Screen name="Forgot" component={ForgotUi}/>
         <Stack.Screen name="City" component={CityUi}/>
-        <Stack.Screen name="Food" component={FoodUi}/>
+        <Stack.Screen name="Food" component={MyTabs}/>
         <Stack.Screen name="Restaurant" component={RestaurantUi}/>
         <Stack.Screen name="Meal" component={MealUi}/>
         <Stack.Screen name="Most" component={MostUi}/>
         <Stack.Screen name="Place" component={PlaceUi}/>
         <Stack.Screen name="Favourite" component={FavouriteUi}/>
         <Stack.Screen name="Filter" component={FilterUi}/>
+        <Stack.Screen name="Mapp" component={MapsUi}/>
+        <Stack.Screen name="Profile" component={ProfileUi}/>
       </Stack.Navigator>
     </NavigationContainer>
     );

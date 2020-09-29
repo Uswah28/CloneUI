@@ -80,7 +80,6 @@ export default class Most extends Component {
 
   getActionSheetRef = ref => (this.actionSheet = ref)
 
-  //handlePress = index => this.setState({ selected: index })
   render() {
     const { selected } = this.state
     const selectedText = options[selected].component || options[selected]

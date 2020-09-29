@@ -3,8 +3,10 @@ import {
     StyleSheet
   } from 'react-native';
 
-import { Container, Content, List, ListItem, Text, Right,
+import { Container, Content, List, Text, Right,
   Icon, Form, Input, Item, Header, Left, Body, Title} from 'native-base';
+
+  import ListItem from './component/listItemCity';
 
 export default class City extends Component {
   render() {
@@ -32,69 +34,20 @@ export default class City extends Component {
             </Form>
             <Content>
           <List>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>United State</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward"  />
-              </Right>
-            </ListItem>
-            <ListItem>
-             <Left>
-             <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>Australia</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-              <Text>France</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>Korea</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>Brazil</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>Canada</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-              <Icon name="flag" onPress={() => this.props.navigation.navigate('Food')}/>
-                <Text>Japan</Text>
-              </Left>
-              <Right>
-                <Icon name="chevron-forward" />
-              </Right>
-            </ListItem>
+          <ListItem
+                  left='United State'/>
+            <ListItem 
+                  left='Australia'/>
+            <ListItem 
+                  left='France'/>
+            <ListItem 
+                  left='Korea'/>
+            <ListItem 
+                  left='Brazil'/>
+            <ListItem 
+                  left='Canada'/>
+            <ListItem 
+                  left='Japan'/>
           </List>
         </Content>
       </Container>

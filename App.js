@@ -117,7 +117,8 @@ function MyTabs() {
       })}
       tabBarOptions={{
         activeTintColor: '#ffe44c',
-        inactiveTintColor: '#888'
+        inactiveTintColor: '#888',
+        showLabel: false
       }}
     >
       <Tab.Screen name="Home" component={StackHomes} />

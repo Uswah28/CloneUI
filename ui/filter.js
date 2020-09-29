@@ -7,8 +7,8 @@ import {
   Dimensions, 
   ImageBackground
 } from 'react-native';
-
-import {Footer, FooterTab, Button, Container, Header, 
+import Button from './component/buttonFilter';
+import { Container, Header, 
   Icon, Left, Card, CardItem, Body, Title, Thumbnail } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
@@ -28,46 +28,29 @@ export default class Filter extends Component {
         </Header>
         <ScrollView>
         <View style={styles.view}>
-                    <Button light style={styles.card}>
-                  <ImageBackground square large source={require('../image/mug.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah3}>Bar & Hotels
-                  <Text style={styles.rat}>{"\n"}           12 Places</Text></Text>
-                  </Button>
-                  <Button light style={styles.card}>
-                  <ImageBackground square large source={require('../image/dining.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah3}>Fine Dining
-                  <Text style={styles.rat}>{"\n"}           15 Places</Text></Text>
-                  </Button>
+                    <Button 
+                    image={require('../image/mug.png')}
+                    up='Bar & Hotels'
+                    down='12 Places'/>
+                  <Button image={require('../image/dining.png')}
+                    up='Fine Dinning'
+                    down='15 Places'/>
                   </View>
                   <View style={styles.view}>
-                  <Button light style={styles.card}>
-                  <ImageBackground square large source={require('../image/kopi.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah}>Cafes
-                  <Text style={styles.rat}>{"\n"}28 Places</Text></Text>
-                  </Button>
-                  <Button active style={styles.card2}>
-                  <ImageBackground square large source={require('../image/nearby.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah}>Nearby
-                  <Text style={styles.rat}>{"\n"}  34 Places</Text></Text>
-                  </Button>
+                  <Button image={require('../image/kopi.png')}
+                    up='Cafes'
+                    down='28 Places'/>
+                  <Button image={require('../image/nearby.png')}
+                    up='Naarby'
+                    down='34 Places'/>
                   </View>
                   <View style={styles.view}>
-                  <Button light style={styles.card}>
-                  <ImageBackground square large source={require('../image/foods.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah3}>Fast Foods
-                  <Text style={styles.rat}>{"\n"}           29 Places</Text></Text>
-                  </Button>
-                  <Button light style={styles.card}>
-                  <ImageBackground square large source={require('../image/pizza.png')}
-                  style={styles.gambar}/>
-                  <Text style={styles.bawah2}>Featured Foods
-                  <Text style={styles.rat}>{"\n"}           21 Places</Text></Text>
-                  </Button>
+                  <Button image={require('../image/foods.png')}
+                    up='Fast Food'
+                    down='29 Places'/>
+                  <Button image={require('../image/pizza.png')}
+                    up='Featured Food'
+                    down='21 Places'/>
                   </View>
         </ScrollView>
         

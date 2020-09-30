@@ -7,8 +7,8 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
-import {List, ListItem, Thumbnail, Header, Card, Footer, FooterTab, 
-  CardItem, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
+import Card from './component/cardMo';
+import {List, ListItem, Thumbnail, Header, CardItem, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
   import { ActionSheetCustom as ActionSheet } from 'react-native-custom-actionsheet'
 
 const CANCEL_INDEX = 0
@@ -124,50 +124,22 @@ export default class Most extends Component {
           destructiveButtonIndex={DESTRUCTIVE_INDEX}
           //onPress={this.handlePress}
         />
-          <Card style={styles.view}>
-            <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Good Thai
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button warning style={styles.btn}><Text style={styles.text}> 4.8 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Sushi Car 
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button danger style={styles.btn}><Text style={styles.text}> 3.8 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3} onPress={() => this.props.navigation.navigate('Restaurant')}>Blacksmith Cafe 
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button warning style={styles.btn2}><Text style={styles.text}> 4.8 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Thumbnail square large source={{uri:'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
-            style={styles.gambar}/>
-            <Text style={styles.txt3}>Pizza Box
-            <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text></Text>
-            <Button warning style={styles.btn}><Text style={styles.text}> 4.2 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
+          <Card 
+            thumb={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+            good='Good Thai'
+            no='4.8'/>
+          <Card
+          thumb={{uri:'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+          good='Sushi Car'
+          no='3.8'/>
+          <Card
+          thumb={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+          good='Blacksmith Cafe'
+            no='4.8'/>
+          <Card 
+          thumb={{uri:'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
+          good='Pizza Box'
+            no='4.2'/>
         </View>
       </ScrollView>
       
@@ -179,7 +151,7 @@ const styles = StyleSheet.create({
   icon:{
     color: '#00ddbf',
     fontSize: 20,
-    marginTop: 60,
+    marginTop: 25,
     marginLeft: -20,
     fontFamily: 'mono'
   },
@@ -194,7 +166,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 30,
     textAlign: "center",
-    marginLeft: 90,
     borderRadius: 5
   },
   view: {

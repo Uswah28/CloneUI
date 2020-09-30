@@ -7,9 +7,9 @@ import {
   ImageBackground,
   Dimensions
 } from 'react-native';
-
-import {Footer, FooterTab, Button, Container, Header, 
-  Icon, Left, Card, CardItem, Body, Title } from 'native-base';
+import CardItem from './component/cardItemMe';
+import { Container, Header, 
+  Icon, Left, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
 
@@ -36,62 +36,26 @@ export default class Meal extends Component {
                 </ImageBackground>
         </View>
         <View style={styles.view}>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?cs=srgb&dl=pexels-lumn-604969.jpg&fm=jpg'}} 
-                    style={styles.gambar} >
-                    <Body style={styles.bodys1} >
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Greek Style</Text>
-                      <Text note style={styles.bawah3}>34 Place</Text>
-                      </Body>
-                    </ImageBackground>
-                  </CardItem>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar} >
-                    <Body style={styles.bodys1}>
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Sushi Style</Text>
-                      <Text note style={styles.bawah3}>12 Place</Text>
-                      </Body>
-                    </ImageBackground>
-                  </CardItem>
+                  <CardItem cardBody
+                  image={{uri:'https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?cs=srgb&dl=pexels-lumn-604969.jpg&fm=jpg'}}
+                  up='Greek Style'
+                  down='34 Places'/>
+                  <CardItem cardBody 
+                  image={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  up='Sushi Style'
+                  down='12 Places'/>
                   </View>
                   <View style={styles.view}>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/3662189/pexels-photo-3662189.jpeg?cs=srgb&dl=pexels-ponyo-sakana-3662189.jpg&fm=jpg'}} 
-                    style={styles.gambar} >
-                    <Body style={styles.bodys1} >
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Meal Beef</Text>
-                      <Text note style={styles.bawah3}>34 Place</Text>
-                      </Body>
-                    </ImageBackground>
-                  </CardItem>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar} >
-                    <Body style={styles.bodys1}>
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Drink Milk</Text>
-                      <Text note style={styles.bawah3}>12 Place</Text>
-                      </Body>
-                    </ImageBackground>
-                  </CardItem>
+                  <CardItem cardBody 
+                  image={{uri: 'https://images.pexels.com/photos/3662189/pexels-photo-3662189.jpeg?cs=srgb&dl=pexels-ponyo-sakana-3662189.jpg&fm=jpg'}} 
+                  up='Meal Beef'
+                  down='34 Places'/>
+                  <CardItem cardBody 
+                  image={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  up='Drink Milk'
+                  down='12 Places'/>
                   </View>
         </ScrollView>
-        <Footer style={styles.footer}>
-          <FooterTab style={styles.footer}>
-            <Button style={styles.footer}>
-              <Icon name="home" onPress={() => this.props.navigation.navigate('Food')}/>
-            </Button>
-            <Button>
-              <Icon type='MaterialIcons' name="place"/>
-            </Button>
-            <Button >
-              <Icon name="heart" onPress={() => this.props.navigation.navigate('Favourite')}/>
-            </Button>
-            <Button>
-              <Icon name="person" />
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }

@@ -22,20 +22,18 @@ import CityUi from './ui/city';
 
 //Screen Home
 import FoodUi from './ui/food';
-import RestaurantUi from './ui/restaurant';
 import MealUi from './ui/meal';
 import MostUi from './ui/most';
-import PlaceUi from './ui/place';
 import FilterUi from './ui/filter';
 
 //Screen Maps
-import MapsUi from './ui/mapp';
+import PlaceUi from './ui/place';
 
 //Screen Favorite
 import FavouriteUi from './ui/favourite';
 
 //Screen Profile
-import ProfileUi from './ui/profile';
+import RestaurantUi from './ui/restaurant';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -66,7 +64,7 @@ function StackMaps() {
       screenOptions={{
         headerShown: false
       }}>
-        <MapsStk.Screen name="Mapp" component={MapsUi} />
+        <MapsStk.Screen name="Mapp" component={FilterUi} />
     </MapsStk.Navigator>
 
   )
@@ -90,7 +88,7 @@ function StackProfile() {
       screenOptions={{
         headerShown: false
       }}>
-        <ProfileStk.Screen name="Profile" component={ProfileUi} />
+        <ProfileStk.Screen name="Profile" component={RestaurantUi} />
     </ProfileStk.Navigator>
 
   )
@@ -148,8 +146,6 @@ export default class App extends Component {
         <Stack.Screen name="Place" component={PlaceUi}/>
         <Stack.Screen name="Favourite" component={FavouriteUi}/>
         <Stack.Screen name="Filter" component={FilterUi}/>
-        <Stack.Screen name="Mapp" component={MapsUi}/>
-        <Stack.Screen name="Profile" component={ProfileUi}/>
       </Stack.Navigator>
     </NavigationContainer>
     );

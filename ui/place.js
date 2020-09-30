@@ -7,8 +7,8 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
-import {List, Content, ListItem, Header, Card, Footer, FooterTab, 
-  CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
+import Card from './component/cardPl';
+import {List, Content, ListItem, Header, CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
 const height = width * 1;
 export default class Place extends Component {
@@ -47,33 +47,15 @@ export default class Place extends Component {
             </Right>
             </ListItem>
           </List>
-          <Card style={styles.view}>
-            <CardItem>
-            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
-            <Text style={styles.txt3}>Good Thai</Text>{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
-            <Button warning style={styles.btn}><Text style={styles.text}> 4.8 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
-            <Text style={styles.txt3}>Spice Alley</Text>{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
-            <Button danger style={styles.btn}><Text style={styles.text}> 3.2 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-            <Text style={styles.rat}>11.30AM to 11PM{"\n"}{"\n"}
-            <Text style={styles.txt3}>Canton House</Text>{"\n"}
-            {"\n"}20 Queen Street, NSW{"\n"}Asia, Thai</Text>
-            <Button danger style={styles.btn2}><Text style={styles.text}> 3.6 </Text></Button>
-            <Icon type='FontAwesome' name='bookmark' style={styles.icon} />
-            </CardItem>
-          </Card>
+          <Card 
+          good='Good Thai'
+          no='4.8'/>
+          <Card 
+          good='Spice Alley'
+          no='3.2'/>
+          <Card 
+          good='Canton House'
+          no='3.6'/>
         </View>
       </ScrollView>
       
@@ -114,8 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'mono',
     color:'#000',
-    fontWeight: 'bold',
-    marginLeft: 10
+    fontWeight: 'bold'
   },
   txt2:{
     color: '#00ddbf',

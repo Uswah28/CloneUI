@@ -5,10 +5,12 @@ import {
   View,
   ImageBackground,
   Dimensions, 
-  Text,
-  Image
+  Text
 } from 'react-native';
-import {List, ListItem, Thumbnail, Header, Content, Card, Footer, FooterTab, 
+import ListItemRe from './component/listItemRe';
+import ViewRe from './component/viewRe';
+import ListRe from './component/listRe';
+import {List, ListItem, Thumbnail, Header, Content, Card,
   CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
 const height = width * 0.7;
@@ -57,30 +59,15 @@ export default class Restaurant extends Component {
             <Icon type='MaterialIcons' name="place" style={styles.icon3}/>
             </Right>
             </ListItem>
-            <ListItem>
-              <Left>
-            <Text style={styles.txt}>Call</Text>
-            </Left>
-            <Right>
-            <Text style={styles.txt2}>(+61) 2 3872 8392</Text>
-            </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-            <Text style={styles.txt}>Cuisines</Text>
-            </Left>
-            <Right>
-            <Text style={styles.txt2}>Australia, Cafe</Text>
-            </Right>
-            </ListItem>
-            <ListItem>
-              <Left>
-            <Text style={styles.txt}>Average Cost</Text>
-            </Left>
-            <Right>
-            <Text style={styles.txt2}>$20 - $50</Text>
-            </Right>
-            </ListItem>
+            <ListItemRe
+            up='Call'
+            down='(+61) 2 3872 8392'/>
+            <ListItemRe
+            up='Cuisines'
+            down='Australia, Cafe'/>
+            <ListItemRe
+            up='Average Cost'
+            down='$20 - $50'/>
             <ListItem>
               <Left>
             <Text style={styles.txt3}>Photos</Text>
@@ -92,181 +79,37 @@ export default class Restaurant extends Component {
             </List>
       </View>
       <View>
-            <View style={styles.view}>
-              <ScrollView horizontal>
-                <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3662130/pexels-photo-3662130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/2130134/pexels-photo-2130134.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3785709/pexels-photo-3785709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-              </ScrollView>
-            </View> 
-            <ListItem>
-              <Text style={styles.text2}>Food{"\n"} (80)</Text> 
-              <Text style={styles.text2}>Specials{"\n"}   (122)</Text>
-              <Text style={styles.text2}>  Menu{"\n"}   (10)</Text>
-              <Text style={styles.text2}>All Photos{"\n"}    (115)</Text>
-            </ListItem>
+            <ViewRe 
+                  images={{uri: 'https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  images2={{uri: 'https://images.pexels.com/photos/3662130/pexels-photo-3662130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  images3={{uri: 'https://images.pexels.com/photos/2130134/pexels-photo-2130134.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  images4={{uri: 'https://images.pexels.com/photos/3785709/pexels-photo-3785709.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  /> 
+              <ListItem>
+              <Text style={styles.text2}>Food{"\n"} <Text style={styles.txt}>(80)</Text></Text> 
+              <Text style={styles.text2}>Specials{"\n"}   <Text style={styles.txt}>(122)</Text></Text>
+              <Text style={styles.text2}>  Menu{"\n"}   <Text style={styles.txt}>(10)</Text></Text>
+              <Text style={styles.text2}>All Photos{"\n"}    <Text style={styles.txt}>(115)</Text></Text>
+              </ListItem>
             <List style={styles.view2}>
               <Text style={styles.txt3}>Reviews{"\n"}</Text>
               </List>
-            <View style={styles.view2}>
-            <View>
-                <Thumbnail source={{uri: 'https://images.pexels.com/photos/3439818/pexels-photo-3439818.jpeg?cs=srgb&dl=pexels-elijah-o%27donnell-3439818.jpg&fm=jpg'}} 
-                style={styles.gambar4} />
-                        </View>
-                        <View>
-                            <Text style={styles.txt3}>Kelly West</Text>
-                            <Text style={styles.bawah1}>45 Reviews, 210 Followers</Text>
-                        </View>
-                        <View>
-                        <Button bordered style={styles.btn}>
-            <Text style={styles.txt4}>Follow</Text>
-          </Button>
-                        </View>
-                    </View>
-                    <View>
-                    <View style={styles.rating}>
-                      <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star-o' style={styles.star} />
-                          <Text style={styles.rat}>4.0</Text>
-                    <Icon type='AntDesign' name='like2' style={styles.star2} />
-                          <Icon type='FontAwesome' name='comment-o' />
-                    </View>
-                    </View>
-                    <List>
-                      <ListItem style={styles.rating}>
-                      <Text style={styles.txt}>I enjoyed the food of the restaurant. The dishes are
-                        attractive and very beautiful. Good food, luxurious space
-                        and enthusiastic service. I will be back in the...
-                        <Text style={styles.rat3}>Read More</Text></Text>
-                        </ListItem>
-                    </List>
-                    <View style={styles.view}>
-              <ScrollView horizontal>
-                <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1893556.jpg&fm=jpg'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?cs=srgb&dl=pexels-nerfee-mirandilla-3186654.jpg&fm=jpg'}} 
-                  style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/3850213/pexels-photo-3850213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3206433/pexels-photo-3206433.jpeg?cs=srgb&dl=pexels-nadi-lindsay-3206433.jpg&fm=jpg'}} 
-                  style={styles.gambar}><Text style={styles.txt5}>+12</Text>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-              </ScrollView>
-            </View>
-            <View style={styles.view2}>
-            <View>
-                <Thumbnail source={{uri: 'https://images.pexels.com/photos/3556533/pexels-photo-3556533.jpeg?cs=srgb&dl=pexels-oladimeji-ajegbile-3556533.jpg&fm=jpg'}} 
-                style={styles.gambar4} />
-                        </View>
-                        <View>
-                            <Text style={styles.txt3}>Jason Mars</Text>
-                            <Text style={styles.bawah1}>45 Reviews, 210 Followers</Text>
-                        </View>
-                        <View>
-                        <Button bordered style={styles.btn}>
-            <Text style={styles.txt4}>Follow</Text>
-          </Button>
-                        </View>
-                    </View>
-                    <View>
-                    <View style={styles.rating}>
-                      <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star' style={styles.star} />
-                          <Icon type='FontAwesome' name='star-o' style={styles.star} />
-                          <Text style={styles.rat}>4.0</Text>
-                    <Icon type='AntDesign' name='like2' style={styles.star2} />
-                          <Icon type='FontAwesome' name='comment-o' />
-                    </View>
-                    </View>
-                    <List>
-                      <ListItem style={styles.rating}>
-                      <Text style={styles.txt}>I enjoyed the food of the restaurant. The dishes are
-                        attractive and very beautiful. Good food, luxurious space
-                        and enthusiastic service. I will be back in the...
-                        <Text style={styles.rat3}>Read More</Text></Text>
-                        </ListItem>
-                    </List>
-                    <View style={styles.view}>
-              <ScrollView horizontal>
-                <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                    <ImageBackground source={{uri: 'https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                    style={styles.gambar}>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-                  <Card>
-                  <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={{uri: 'https://images.pexels.com/photos/3338497/pexels-photo-3338497.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.gambar}><Text style={styles.txt5}>+12</Text>
-                    </ImageBackground>
-                  </CardItem>
-                  </Card>
-              </ScrollView>
-            </View>
+              <ListRe
+              thumb={{uri: 'https://images.pexels.com/photos/3439818/pexels-photo-3439818.jpeg?cs=srgb&dl=pexels-elijah-o%27donnell-3439818.jpg&fm=jpg'}} 
+                up='Kelly West'
+                image1={{uri: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?cs=srgb&dl=pexels-valeria-boltneva-1893556.jpg&fm=jpg'}} 
+                image2={{uri: 'https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?cs=srgb&dl=pexels-nerfee-mirandilla-3186654.jpg&fm=jpg'}} 
+                image3={{uri: 'https://images.pexels.com/photos/3850213/pexels-photo-3850213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
+                image4={{uri: 'https://images.pexels.com/photos/3206433/pexels-photo-3206433.jpeg?cs=srgb&dl=pexels-nadi-lindsay-3206433.jpg&fm=jpg'}} 
+              />
+              <ListRe
+              thumb={{uri: 'https://images.pexels.com/photos/3556533/pexels-photo-3556533.jpeg?cs=srgb&dl=pexels-oladimeji-ajegbile-3556533.jpg&fm=jpg'}} 
+                up='Jason Mars'
+                image1={{uri: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
+                image2={{uri: 'https://images.pexels.com/photos/286283/pexels-photo-286283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                image3={{uri: 'https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                image4={{uri: 'https://images.pexels.com/photos/3338497/pexels-photo-3338497.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+              />
             <List style={styles.view2}>
               <Text style={styles.txt1}>Read all (123){"\n"}</Text>
               </List>
@@ -353,11 +196,12 @@ const styles = StyleSheet.create({
     marginTop:-15
   },
   card: {
-    flex: 3
+    flex: 3,
+    margin: 3
   },
   view: {
     marginLeft: 10,
-    marginTop:-5
+    marginTop:-3
   },
   txt3:{
     fontSize: 20,

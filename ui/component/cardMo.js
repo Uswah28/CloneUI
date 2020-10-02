@@ -10,7 +10,7 @@ const CardMo = (props) => {
     return (
         <Card >
             <CardItem>
-            <Thumbnail square large source={props.thumb} 
+            <Thumbnail square large source={{ uri: props.thumb }} 
             style={styles.gambar}/>
             <Text style={styles.txt3}>{props.good}
             <Text style={styles.rat}>{"\n"}{"\n"}11.30AM to 11PM{"\n"}

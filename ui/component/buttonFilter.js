@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     width: 170,
     height: 200,
     marginTop: 10,
-    margin: 3
+    margin: 3,
+    backgroundColor: '#fff'
   },
   gambar:{
     height: 100, 

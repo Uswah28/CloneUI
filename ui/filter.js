@@ -3,13 +3,11 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Text,
-  Dimensions, 
-  ImageBackground
+  Dimensions
 } from 'react-native';
 import Button from './component/buttonFilter';
 import { Container, Header, 
-  Icon, Left, Card, CardItem, Body, Title, Thumbnail } from 'native-base';
+  Icon, Left, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
 

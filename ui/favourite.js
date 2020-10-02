@@ -7,11 +7,50 @@ import {
   Text
 } from 'react-native';
 import Card from './component/cardMo';
-import {List, ListItem, Thumbnail, Header, Footer, FooterTab, 
-  CardItem, Button, Icon, Right, Left, Body, Container } from "native-base";
+import { FlatList } from 'react-native-gesture-handler';
+import { Header, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
 const height = width * 0.25;
 export default class Favourite extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        explore: [],
+        show: false,
+        show2: false,
+    }
+}
+
+componentDidMount() {
+    this.setState({
+        explore: [
+            {
+                id: '1',
+                image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Good Thai',
+                no: '4.8'
+            },
+            {
+                id: '2',
+                image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Sushi Car',
+                no: '3.8',
+            },
+            {
+                id: '3',
+                image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Blacksmith Cafe',
+                no: '4.8',
+            },
+            {
+              id: '4',
+              image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+              title: 'Pizza Box',
+              no: '4.2',
+          },
+        ]
+    })
+}
   render() {
     return (
       <Container>
@@ -24,22 +63,17 @@ export default class Favourite extends Component {
         </Header>
       <ScrollView>
         <View>
-        <Card 
-            thumb={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-            good='Good Thai'
-            no='4.8'/>
-          <Card
-          thumb={{uri:'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-          good='Sushi Car'
-          no='3.8'/>
-          <Card
-          thumb={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-          good='Blacksmith Cafe'
-            no='4.8'/>
-          <Card 
-          thumb={{uri:'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
-          good='Pizza Box'
-            no='4.2'/>
+        <FlatList
+                    data={this.state.explore}
+                    keyExtractor={this.keyExtractor}
+                    renderItem={({ item }) => (
+                        <Card
+                            thumb={item.image}
+                            good={item.title}
+                            no={item.no}
+                        />
+                    )}
+                    />
         </View>
       </ScrollView>
       

@@ -12,6 +12,7 @@ const {width} = Dimensions.get("window");
 const height = width * 0.6;
 
 export default class Filter extends Component {
+  
   render() {
     return (
       <Container>

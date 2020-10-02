@@ -148,33 +148,6 @@ export default class Most extends Component {
   }
 }
 const styles = StyleSheet.create({
-  icon:{
-    color: '#00ddbf',
-    fontSize: 20,
-    marginTop: 25,
-    marginLeft: -20,
-    fontFamily: 'mono'
-  },
-  btn2:{
-    width: 40,
-    height: 30,
-    textAlign: "center",
-    marginLeft: 65,
-    borderRadius: 5
-  },
-  btn:{
-    width: 40,
-    height: 30,
-    textAlign: "center",
-    borderRadius: 5
-  },
-  view: {
-    marginTop:-5
-  },
-  rat:{
-    fontSize: 12,
-    color: '#bdbdbd',
-  },
   txt3:{
     fontSize: 20,
     fontFamily: 'mono',
@@ -188,22 +161,11 @@ const styles = StyleSheet.create({
     marginLeft: -100,
     fontFamily: 'mono'
   },
-  text2:{
-    color:'#000',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginLeft: 15,
-    fontFamily: 'mono'
-  },
   text:{
     color:'white',
     fontSize: 20,
     marginLeft: 2,
     fontWeight: 'bold'
-  },
-  footer:{
-    backgroundColor: 'white'
   },
   judul: {
     color: '#000',
@@ -213,12 +175,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontFamily: 'mono',
   },
-  gambar:{
-    borderRadius: 10
-  },
 gambar2:{
   height, 
   width, 
   flex: 1
-},
+}
 });

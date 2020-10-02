@@ -7,7 +7,7 @@ import {
   ImageBackground,
   Dimensions
 } from 'react-native';
-import CardItem from './component/cardItemMe';
+import ViewMe from './component/viewMe';
 import { Container, Header, 
   Icon, Left, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
@@ -35,35 +35,22 @@ export default class Meal extends Component {
                   <Text style={styles.txt}>12 Places</Text>
                 </ImageBackground>
         </View>
-        <View style={styles.view}>
-                  <CardItem cardBody
+        <ViewMe 
                   image={{uri:'https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?cs=srgb&dl=pexels-lumn-604969.jpg&fm=jpg'}}
                   up='Greek Style'
-                  down='34 Places'/>
-                  <CardItem cardBody 
-                  image={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  up='Sushi Style'
-                  down='12 Places'/>
-                  </View>
-                  <View style={styles.view}>
-                  <CardItem cardBody 
+                  images={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  ups='Sushi Style'/>
+          <ViewMe 
                   image={{uri: 'https://images.pexels.com/photos/3662189/pexels-photo-3662189.jpeg?cs=srgb&dl=pexels-ponyo-sakana-3662189.jpg&fm=jpg'}} 
-                  up='Meal Beef'
-                  down='34 Places'/>
-                  <CardItem cardBody 
-                  image={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  up='Drink Milk'
-                  down='12 Places'/>
-                  </View>
+                  up='Meal Beef' 
+                  images={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  ups='Drink Milk'/>
         </ScrollView>
       </Container>
     );
   }
 }
 const styles = StyleSheet.create({
-  footer:{
-    backgroundColor: 'white'
-  },
   judul: {
     color: 'white',
     fontSize: 17,
@@ -87,18 +74,8 @@ const styles = StyleSheet.create({
     bottom:0,
     alignSelf: 'flex-start'
   },
-  view: {
-    flexDirection: 'row',
-    marginLeft: 5,
-    marginTop:10
-  },
   icon: {
     color: '#ffe44c'
-  },
-  card: {
-    margin: 10,
-    width: 150,
-    height: 200
   },
   header: {
     backgroundColor: '#fff'
@@ -116,25 +93,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 10
   },
-  bodys1:{
-    marginTop: 145
-  },
   gambar:{
     height: 200, 
     width: null, 
     flex: 1,
     borderRadius: 10
-  },
-  bawah2:{
-    marginRight: 50,
-    fontWeight: 'bold',
-    marginLeft: 5,
-    fontSize: 15,
-    color: 'white'
-  },
-  bawah3:{
-    fontSize: 13,
-    marginLeft: 5,
-    color: 'white',
-  },
+  }
 });

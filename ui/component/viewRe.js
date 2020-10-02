@@ -40,12 +40,14 @@ const styles = StyleSheet.create({
   },
     card: {
         flex: 3,
-        margin: 3
+        margin: 3,
+        borderRadius:10
       },
       gambar:{
         height: 80, 
         width: 80, 
-        flex: 1
+        flex: 1,
+        borderRadius: 10
       }
 })
 

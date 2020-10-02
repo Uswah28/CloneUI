@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
-    ScrollView,
-    View,
     Text,
 } from 'react-native';
 
@@ -13,7 +10,7 @@ const ListItemCU = (props) => {
         <ListItem>
             <Left>
             <Icon name="flag"/>
-                <Text>{props.left}</Text>
+                <Text onPress={props.onPress}>{props.left}</Text>
             </Left>
             <Right>
             <Icon name="chevron-forward"  />

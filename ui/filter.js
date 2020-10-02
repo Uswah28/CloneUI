@@ -31,10 +31,10 @@ export default class Filter extends Component {
                     <Button 
                     image={require('../image/mug.png')}
                     up='Bar & Hotels'
-                    down='12 Places'/>
+                    down='           12 Places'/>
                   <Button image={require('../image/dining.png')}
                     up='Fine Dinning'
-                    down='15 Places'/>
+                    down='           15 Places'/>
                   </View>
                   <View style={styles.view}>
                   <Button image={require('../image/kopi.png')}
@@ -42,15 +42,15 @@ export default class Filter extends Component {
                     down='28 Places'/>
                   <Button image={require('../image/nearby.png')}
                     up='Naarby'
-                    down='34 Places'/>
+                    down='  34 Places'/>
                   </View>
                   <View style={styles.view}>
                   <Button image={require('../image/foods.png')}
                     up='Fast Food'
-                    down='29 Places'/>
+                    down='        29 Places'/>
                   <Button image={require('../image/pizza.png')}
                     up='Featured Food'
-                    down='21 Places'/>
+                    down='            21 Places'/>
                   </View>
         </ScrollView>
         

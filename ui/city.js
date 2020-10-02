@@ -35,19 +35,26 @@ export default class City extends Component {
             <Content>
           <List>
           <ListItem
-                  left='United State'/>
+                  left='United State'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='Australia'/>
+                  left='Australia'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='France'/>
+                  left='France'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='Korea'/>
+                  left='Korea'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='Brazil'/>
+                  left='Brazil'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='Canada'/>
+                  left='Canada'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
             <ListItem 
-                  left='Japan'/>
+                  left='Japan'
+                  onPress={() => this.props.navigation.navigate('Food')}/>
           </List>
         </Content>
       </Container>

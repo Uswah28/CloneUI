@@ -2,25 +2,42 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     ImageBackground,
-    Text
+    Text,
+    View
 } from 'react-native';
 
 import { CardItem, Body } from 'native-base';
 
-const CardItemMe = (props) => {
+const ViewMe = (props) => {
     return (
+      <View style={styles.view}>
         <CardItem cardBody style={styles.card}>
           <ImageBackground source={props.image} 
           style={styles.gambar} >
           <Body style={styles.bodys1} >
             <Text style={styles.bawah2}>{props.up}</Text>
-            <Text note style={styles.bawah3}>{props.down}</Text>
+            <Text note style={styles.bawah3}>34 Places</Text>
             </Body>
           </ImageBackground>
         </CardItem>
+        <CardItem cardBody style={styles.card}>
+          <ImageBackground source={props.images} 
+          style={styles.gambar} >
+          <Body style={styles.bodys1} >
+            <Text style={styles.bawah2}>{props.ups}</Text>
+            <Text note style={styles.bawah3}>12 Places</Text>
+            </Body>
+          </ImageBackground>
+        </CardItem>
+        </View>
     )
 }
 const styles = StyleSheet.create({
+  view: {
+    flexDirection: 'row',
+    marginLeft: 5,
+    marginTop:10
+  },
       card: {
         margin: 10,
         width: 150,
@@ -48,4 +65,4 @@ const styles = StyleSheet.create({
         color: 'white',
       },
 })
-export default CardItemMe;
+export default ViewMe;

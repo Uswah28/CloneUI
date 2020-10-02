@@ -24,7 +24,6 @@ export default class Favourite extends Component {
         </Header>
       <ScrollView>
         <View>
-        
         <Card 
             thumb={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
             good='Good Thai'

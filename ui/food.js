@@ -8,9 +8,12 @@ import {
   ImageBackground,
   Dimensions
 } from 'react-native';
-
+import ListF from './component/listF';
+import CardF from './component/cardF';
+import CardO from './component/cardO';
+import CardD from './component/cardD';
 import { Container, Form, Input, Item, Header, 
-  Icon, List, ListItem, Left, Card, CardItem, Body, Title, Right } from 'native-base';
+  Icon, Left, Card, CardItem, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
 const image = [
@@ -76,159 +79,76 @@ export default class Food extends Component {
           }
           </View>
         </View>
-        <List>
-            <ListItem>
-              <Left>
-              <Text style={styles.most}>Most Popular</Text>
-              </Left>
-              <Right>
-              <Text style={styles.see} onPress={() => this.props.navigation.navigate('Most')}>See all</Text>
-              </Right>
-            </ListItem>
-            </List>
+        <ListF
+        up='Most Popular' 
+        onPress={() => this.props.navigation.navigate('Most')}/>
             <View style={styles.view}>
               <ScrollView horizontal>
-              <Card style={styles.card2}>
-            <CardItem cardBody>
-              <Image source={require('../image/kfcbroadway.jpg')}
-                style={styles.gambar}
-              />
-            </CardItem>
-            <CardItem>
-              <View style={{ flexDirection: 'column' }}>
-              <Text style={styles.bawah}>KFC Broadway</Text>
-                      <Text note style={styles.bawah1}>122 Queen Street</Text>
-                      <Text note style={styles.bawah1}>Fried Chicken, American</Text>
-              </View>
-            </CardItem>
-          </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                    <Image source={require('../image/greek.jpg')} style={styles.gambar}/>
-                    </CardItem>
-            <CardItem>
-              <View style={{ flexDirection: 'column' }}>
-              <Text style={styles.bawah}>Greek House</Text>
-                      <Text note style={styles.bawah1}>23 Queen Street</Text>
-                      <Text note style={styles.bawah1}>Burritos, Greek</Text>
-              </View>
-            </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                    <Image source={require('../image/kfcbroadway.jpg')} style={styles.gambar}/>
-                    </CardItem>
-                    <CardItem>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah} onPress={() => this.props.navigation.navigate('Most')}>KFC Broadway</Text>
-                      <Text note style={styles.bawah1}>122 Queen Street</Text>
-                      <Text note style={styles.bawah1}>Fried Chicken, American</Text>
-                      </View>
-                      </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                    <Image source={require('../image/kfcbroadway.jpg')} style={styles.gambar}/>
-                    </CardItem>
-                    <CardItem>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah} onPress={() => this.props.navigation.navigate('Most')}>KFC Broadway</Text>
-                      <Text note style={styles.bawah1}>122 Queen Street</Text>
-                      <Text note style={styles.bawah1}>Fried Chicken, American</Text>
-                      </View>
-                      </CardItem>
-                  </Card>
+              <CardF 
+              image={require('../image/kfcbroadway.jpg')}
+              up='KFC Broadway'
+              down='122 Queen Street'
+              body='Fried Chicken, American'/>
+                  <CardF
+                  image={require('../image/greek.jpg')} style={styles.gambar}
+                    up='Greek House'
+                    down='23 Queen Street'
+                    body='Burritos, Greek'/>
+                  <CardF 
+                  image={require('../image/kfcbroadway.jpg')} style={styles.gambar}
+                  up='KFC Broadway'
+                  down='122 Queen Street'
+                  body='Fried Chicken, American'/>
+                  <CardF 
+                  image={require('../image/greek.jpg')} 
+                  up='Greek House'
+                  down='23 Queen Street'
+                  body='Burritos, Greek'/>
               </ScrollView>
             </View>
-          <List>
-            <ListItem>
-              <Left>
-              <Text style={styles.most}>Meal Deal</Text>
-              </Left>
-              <Right>
-              <Text style={styles.see} onPress={() => this.props.navigation.navigate('Meal')}>See all</Text>
-              </Right>
-            </ListItem>
-            </List>
+            <ListF
+        up='Meal Deal' 
+        onPress={() => this.props.navigation.navigate('Meal')}/>
           <View> 
             <View style={styles.view}>
               <ScrollView horizontal>
-                <Card style={styles.card2}>
-                  <CardItem cardBody >
-                    <Image source={{uri: 'https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?cs=srgb&dl=pexels-lumn-604969.jpg&fm=jpg'}} 
-                    style={styles.bodys}/>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Greek Style</Text>
-                      <Text note style={styles.bawah3}>34 Place</Text></View>
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                  <Image source={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.bodys}/>
-                  <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah2} onPress={() => this.props.navigation.navigate('Meal')}>Sushi Style</Text>
-                      <Text note style={styles.bawah3}>12 Place</Text></View>
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                    <Image source={{uri: 'https://images.pexels.com/photos/3662189/pexels-photo-3662189.jpeg?cs=srgb&dl=pexels-ponyo-sakana-3662189.jpg&fm=jpg'}} 
-                    style={styles.bodys}/>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah2}>Meal Beef</Text>
-                      <Text note style={styles.bawah3}>12 Place</Text></View>
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody >
-                  <Image source={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
-                  style={styles.bodys}/>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text style={styles.bawah2}>Drink Milk</Text>
-                      <Text note style={styles.bawah3}>23 Place</Text></View>
-                  </CardItem>
-                  </Card>
+                <CardO 
+                images={{uri: 'https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?cs=srgb&dl=pexels-lumn-604969.jpg&fm=jpg'}} 
+                    ups='Greek Style'
+                    downs='34 Place'/>
+                  <CardO
+                  images={{uri: 'https://images.pexels.com/photos/3642030/pexels-photo-3642030.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  ups='Sushi Style'
+                  downs='12 Place'/>
+                  <CardO 
+                  images={{uri: 'https://images.pexels.com/photos/3662189/pexels-photo-3662189.jpeg?cs=srgb&dl=pexels-ponyo-sakana-3662189.jpg&fm=jpg'}} 
+                    ups='Meal Beef'
+                    downs='12 Place'/>
+                  <CardO 
+                  images={{uri: 'https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
+                  ups='Drink Milk'
+                  downs='23 Place'/>
               </ScrollView>
             </View>
           </View>
-          <List>
-            <ListItem>
-              <Left>
-              <Text style={styles.most}>Popular Restaurant</Text>
-              </Left>
-              <Right>
-              <Text style={styles.see} onPress={() => this.props.navigation.navigate('Place')}>See all</Text>
-              </Right>
-            </ListItem>
-            </List>
+          <ListF
+        up='Popular Restaurant' 
+        onPress={() => this.props.navigation.navigate('Place')}/>
           <View> 
             <View style={styles.view}>
               <ScrollView horizontal>
-                <Card style={styles.card2}>
-                  <CardItem cardBody>
-                    <Image source={{uri: 'https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?cs=srgb&dl=pexels-kaboompics-com-6267.jpg&fm=jpg'}} 
-                    style={styles.bodys1}/>
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody>
-                    <Image source={{uri: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg'}} 
-                    style={styles.bodys1}/>
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody>
-                    <Image source={{uri: 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg'}} 
-                    style={styles.bodys1} />
-                  </CardItem>
-                  </Card>
-                  <Card style={styles.card2}>
-                  <CardItem cardBody>
-                    <Image source={{uri: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?cs=srgb&dl=pexels-pixabay-262047.jpg&fm=jpg'}} 
-                    style={styles.bodys1}/>
-                  </CardItem>
-                  </Card>
+                <CardD 
+                imagee={{uri: 'https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?cs=srgb&dl=pexels-kaboompics-com-6267.jpg&fm=jpg'}} 
+                    />
+                  <CardD
+                  imagee={{uri: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=pexels-pixabay-260922.jpg&fm=jpg'}} 
+                    />
+                  <CardD
+                  imagee={{uri: 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg'}} 
+                    />
+                  <CardD
+                  imagee={{uri: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?cs=srgb&dl=pexels-pixabay-262047.jpg&fm=jpg'}} 
+                   />
               </ScrollView>
             </View>
           </View>

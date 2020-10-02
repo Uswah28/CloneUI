@@ -126,60 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold'
   },
-  txt5:{
-    color:'#fff',
-    textAlign: "center",
-    marginTop: 35
-  },
-  rat3:{
-    color: '#00ddbf'
-  },
-  rat2: {
-    color: '#ffe44c'
-  },
-  rat: {
-    color: '#ffe44c',
-    fontSize: 15,
-    margin: 5
-  },
-  footer:{
-    backgroundColor: 'white'
-  },
-  rating: {
-    marginLeft: 20,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginTop: 10
-  },
-  star2:{ 
-    fontSize: 25, 
-    color: '#ffe44c',
-    marginLeft: 100,
-    marginRight: 25
-  },
-  star:{ 
-    fontSize: 20, 
-    color: '#ffe44c',
-    margin: 2
-  },
-  txt4:{
-    color:'#00ddbf',
-    width: 70,
-    height: 30,
-    textAlignVertical: "center",
-    textAlign: "center",
-  },
-  btn:{
-    borderColor:'#00ddbf',
-    width: 70,
-    height: 30,
-    marginLeft: 50,
-    borderRadius: 20,
-    marginTop: 15
-  },
-  gambar4:{
-    marginTop: 0
-  },
   view2:{ 
     flexDirection: 'row', 
     justifyContent: 'flex-start',
@@ -194,14 +140,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginLeft: 20,
     marginTop:-15
-  },
-  card: {
-    flex: 3,
-    margin: 3
-  },
-  view: {
-    marginLeft: 10,
-    marginTop:-3
   },
   txt3:{
     fontSize: 20,
@@ -223,11 +161,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontFamily: 'mono',
     alignSelf: 'flex-start'
-  },
-  bawah1:{
-    fontSize: 12,
-    marginLeft: 10,
-    color: '#bdbdbd',
   },
   text:{
     fontSize: 13,
@@ -268,19 +201,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontFamily: 'mono',
   },
-  gambar3:{
-    height: 50, 
-    width: 50,
-  borderRadius: 50
-  },
 gambar2:{
   height, 
   width, 
-  flex: 1
-},
-gambar:{
-  height: 80, 
-  width: 80, 
   flex: 1
 }
 });

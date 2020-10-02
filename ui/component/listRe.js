@@ -4,6 +4,7 @@ import {
     ScrollView,
     Text,
     View,
+    Image,
     ImageBackground,
 } from 'react-native';
 import { ListItem, List, Thumbnail, Button, Icon, CardItem} from 'native-base';
@@ -48,13 +49,13 @@ const ListRe = (props) => {
                     <View style={styles.view}>
               <ScrollView horizontal>
                   <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={props.image1} 
+                  <Image source={props.image1} 
                    style={styles.gambar}/></CardItem>
                   <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={props.image2} 
+                  <Image source={props.image2} 
                   style={styles.gambar}/></CardItem>
                   <CardItem cardBody style={styles.card}>
-                  <ImageBackground source={props.image3}
+                  <Image source={props.image3}
                   style={styles.gambar}/></CardItem>
                   <CardItem cardBody style={styles.card}>
                   <ImageBackground source={props.image4}
@@ -139,7 +140,8 @@ const styles = StyleSheet.create({
       },
       card: {
         flex: 3,
-        margin: 3
+        margin: 3,
+        borderRadius: 10
       },
       txt5:{
         color:'#fff',
@@ -149,7 +151,8 @@ const styles = StyleSheet.create({
       gambar:{
         height: 80, 
         width: 80, 
-        flex: 1
+        flex: 1,
+        borderRadius: 10
       }
 })
 

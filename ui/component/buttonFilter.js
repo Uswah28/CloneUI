@@ -9,7 +9,7 @@ import { Button } from 'native-base';
 
 const ButtonF = (props) => {
     return (
-      <Button light style={styles.card}>
+      <Button style={styles.card}>
       <ImageBackground square large source={props.image}
       style={styles.gambar}/>
       <Text style={styles.bawah3}>{props.up}
@@ -18,11 +18,11 @@ const ButtonF = (props) => {
         
     )
 }
+
 const styles = StyleSheet.create({
   card: {
     width: 170,
     height: 200,
-    backgroundColor: '#fff',
     marginTop: 10,
     margin: 3
   },

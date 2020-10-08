@@ -4,8 +4,52 @@ import {
 } from 'react-native';
 import { Container, Button, Content, Form, Item, View, Input, Label } from 'native-base';
 
+import AsyncStorage from '@react-native-community/async-storage';
+import axios from 'axios';
+
 export default class SignUp extends Component {
 
+  singUp = () => {
+    AsyncStorage.getItem('username').then((value) => this.setState({ 'username': value }));
+    AsyncStorage.getItem('email').then((value) => this.setState({ 'email': value }));
+    AsyncStorage.getItem('password').then((value) => this.setState({ 'password': value }));
+}
+
+setFname = (value) => {
+    AsyncStorage.setItem('username', value);
+    this.setState({ 'username': value });
+}
+setEmail = (value) => {
+    AsyncStorage.setItem('email', value);
+    this.setState({ 'email': value });
+}
+setPass = (value) => {
+    AsyncStorage.setItem('password', value);
+    this.setState({ 'password': value });
+}
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        username: '',
+        email: '',
+        password: '',
+    }
+}
+
+onSubmit = () => {
+    const exercises = {
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+    }
+
+    console.log('EXERCISES', exercises);
+
+    axios.post('http://192.168.43.129:5000/exercises/add', exercises)
+        .then(res => console.log(res.data))
+}
   render() {
     return (
       <Container>
@@ -18,18 +62,24 @@ export default class SignUp extends Component {
           <Form>
           <Item floatingLabel>
               <Label>Username</Label>
-              <Input />
+              <Input onChangeText={this.setFname}
+                            value={this.state.username}/>
             </Item>
             <Item floatingLabel >
               <Label>Email</Label>
-              <Input />
+              <Input onChangeText={this.setEmail}
+                            value={this.state.email}/>
             </Item>
             <Item floatingLabel>
               <Label>Password</Label>
-              <Input />
+              <Input secureTextEntry={true} onChangeText={this.setPass}
+                            value={this.state.password}/>
             </Item>
           <Button block warning style={styles.btn1}
-          onPress={() => this.props.navigation.navigate('Verify')}>
+          onPress={() => {
+            this.singUp;
+            this.onSubmit();
+          this.props.navigation.navigate('Verify')}}>
             <Text style={styles.text3}>Sign up</Text>
              </Button>
              <Text style={styles.text2} onPress={() => this.props.navigation.navigate('Action')}>

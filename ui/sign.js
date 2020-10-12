@@ -47,7 +47,7 @@ onSubmit = () => {
 
     console.log('EXERCISES', exercises);
 
-    axios.post('http://192.168.43.129:5000/exercises/add', exercises)
+    axios.post('http://192.168.1.8:5000/exercises/add', exercises)
         .then(res => console.log(res.data))
 }
   render() {
@@ -79,7 +79,7 @@ onSubmit = () => {
           onPress={() => {
             this.singUp;
             this.onSubmit();
-          this.props.navigation.navigate('Verify')}}>
+          this.props.navigation.navigate('Login')}}>
             <Text style={styles.text3}>Sign up</Text>
              </Button>
              <Text style={styles.text2} onPress={() => this.props.navigation.navigate('Action')}>

@@ -41,7 +41,7 @@ export default class Login extends Component {
       Alert.alert('Username Empty');
     }
     else if (inputUsername == myUsername && inputPassword == myPass) {
-      this.props.navigation.navigate('Tab', { screen: 'Food' })
+      this.props.navigation.navigate('Food', { screen: 'Home' })
     }
     else {
       Alert.alert('Data not found')

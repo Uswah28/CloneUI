@@ -47,7 +47,7 @@ onSubmit = () => {
 
     console.log('EXERCISES', exercises);
 
-    axios.post('http://192.168.1.8:5000/exercises/add', exercises)
+    axios.post('http://192.168.1.12:5000/exercises/add', exercises)
         .then(res => console.log(res.data))
 }
   render() {

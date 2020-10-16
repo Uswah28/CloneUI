@@ -6,6 +6,7 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
+import axios from 'axios';
 import Card from './component/cardMo';
 import { FlatList } from 'react-native-gesture-handler';
 import { Header, Body, Container } from "native-base";
@@ -15,42 +16,38 @@ export default class Favourite extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        explore: [],
-        show: false,
-        show2: false,
+      image: [],
     }
-}
+  }
 
 componentDidMount() {
-    this.setState({
-        explore: [
-            {
-                id: '1',
-                image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                title: 'Good Thai',
-                no: '4.8'
-            },
-            {
-                id: '2',
-                image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                title: 'Sushi Car',
-                no: '3.8',
-            },
-            {
-                id: '3',
-                image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                title: 'Blacksmith Cafe',
-                no: '4.8',
-            },
-            {
-              id: '4',
-              image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-              title: 'Pizza Box',
-              no: '4.2',
-          },
-        ]
+  axios.get('http://192.168.1.12:5000/fav/')
+      .then(response => {
+        const image = response.data;
+        this.setState({ image })
+        console.log(image)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+}
+
+getdata() {
+  axios.get('http://192.168.1.12:5000/fav/')
+    .then(response => {
+      const name = response.data;
+      this.setState({ name: name })
+      console.log(name)
+    })
+    .catch((error) => {
+      console.log(error);
     })
 }
+
+componentDidUpdate() {
+  this.getdata();
+}
+
   render() {
     return (
       <Container>
@@ -64,8 +61,8 @@ componentDidMount() {
       <ScrollView>
         <View>
         <FlatList
-                    data={this.state.explore}
-                    keyExtractor={this.keyExtractor}
+                    data={this.state.image}
+                    keyExtractor={(item) => item._id}
                     renderItem={({ item }) => (
                         <Card
                             thumb={item.image}

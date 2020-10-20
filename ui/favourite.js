@@ -21,7 +21,7 @@ export default class Favourite extends Component {
   }
 
 componentDidMount() {
-  axios.get('http://192.168.1.12:5000/fav/')
+  axios.get('http://192.168.43.129:5000/fav/')
       .then(response => {
         const image = response.data;
         this.setState({ image })
@@ -30,22 +30,6 @@ componentDidMount() {
       .catch((error) => {
         console.log(error);
       })
-}
-
-getdata() {
-  axios.get('http://192.168.1.12:5000/fav/')
-    .then(response => {
-      const name = response.data;
-      this.setState({ name: name })
-      console.log(name)
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-}
-
-componentDidUpdate() {
-  this.getdata();
 }
 
   render() {
@@ -58,8 +42,6 @@ componentDidUpdate() {
           </Text>
           </Body>
         </Header>
-      <ScrollView>
-        <View>
         <FlatList
                     data={this.state.image}
                     keyExtractor={(item) => item._id}
@@ -70,10 +52,7 @@ componentDidUpdate() {
                             no={item.no}
                         />
                     )}
-                    />
-        </View>
-      </ScrollView>
-      
+                    />      
     </Container>
     );
   }

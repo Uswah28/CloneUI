@@ -7,8 +7,8 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
-import Card from './component/cardMo';
-import {List, ListItem, Thumbnail, Header, CardItem, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
+import CardMo from './component/cardMo';
+import {List, ListItem, Header, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
   import { ActionSheetCustom as ActionSheet } from 'react-native-custom-actionsheet'
 
 const CANCEL_INDEX = 0
@@ -122,21 +122,20 @@ export default class Most extends Component {
           options={options}
           cancelButtonIndex={CANCEL_INDEX}
           destructiveButtonIndex={DESTRUCTIVE_INDEX}
-          //onPress={this.handlePress}
         />
-          <Card 
+          <CardMo 
             thumb={{uri:'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
             good='Good Thai'
             no='4.8'/>
-          <Card
+          <CardMo
           thumb={{uri:'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
           good='Sushi Car'
           no='3.8'/>
-          <Card
+          <CardMo
           thumb={{uri:'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} 
           good='Blacksmith Cafe'
             no='4.8'/>
-          <Card 
+          <CardMo 
           thumb={{uri:'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}} 
           good='Pizza Box'
             no='4.2'/>

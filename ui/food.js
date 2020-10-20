@@ -4,7 +4,6 @@ import {
   ScrollView,
   View,
   Text,
-  Image,
   ImageBackground,
   Dimensions
 } from 'react-native';
@@ -13,7 +12,7 @@ import CardF from './component/cardF';
 import CardO from './component/cardO';
 import CardD from './component/cardD';
 import { Container, Form, Input, Item, Header, 
-  Icon, Left, Card, CardItem, Body, Title } from 'native-base';
+  Icon, Left, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
 const height = width * 0.6;
 const image = [

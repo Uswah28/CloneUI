@@ -7,7 +7,9 @@ import {
   Dimensions, 
   Text
 } from 'react-native';
+
 import CardMo from './component/cardMo';
+
 import {List, ListItem, Header, Button, Icon, Right, Left, Radio, Body, Container } from "native-base";
   import { ActionSheetCustom as ActionSheet } from 'react-native-custom-actionsheet'
 

@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import {
   StyleSheet,
-  ScrollView,
-  View,
   Dimensions, 
   Text
 } from 'react-native';
-import axios from 'axios';
-import Card from './component/cardMo';
+import CardMO from './component/cardMo';
 import { FlatList } from 'react-native-gesture-handler';
 import { Header, Body, Container } from "native-base";
 const {width} = Dimensions.get("window");
@@ -16,22 +13,42 @@ export default class Favourite extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: [],
+        explore: [],
+        show: false,
+        show2: false,
     }
-  }
-
-componentDidMount() {
-  axios.get('http://192.168.43.129:5000/fav/')
-      .then(response => {
-        const image = response.data;
-        this.setState({ image })
-        console.log(image)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
 }
 
+componentDidMount() {
+    this.setState({
+        explore: [
+            {
+                id: '1',
+                image: 'https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Good Thai',
+                no: '4.8'
+            },
+            {
+                id: '2',
+                image: 'https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Sushi Car',
+                no: '3.8',
+            },
+            {
+                id: '3',
+                image: 'https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                title: 'Blacksmith Cafe',
+                no: '4.8',
+            },
+            {
+              id: '4',
+              image: 'https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+              title: 'Pizza Box',
+              no: '4.2',
+          },
+        ]
+    })
+}
   render() {
     return (
       <Container>
@@ -43,8 +60,8 @@ componentDidMount() {
           </Body>
         </Header>
         <FlatList
-                    data={this.state.image}
-                    keyExtractor={(item) => item._id}
+                    data={this.state.explore}
+                    keyExtractor={this.keyExtractor}
                     renderItem={({ item }) => (
                         <Card
                             thumb={item.image}
@@ -52,7 +69,7 @@ componentDidMount() {
                             no={item.no}
                         />
                     )}
-                    />      
+                    />   
     </Container>
     );
   }

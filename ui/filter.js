@@ -5,7 +5,7 @@ import {
   View,
   Dimensions
 } from 'react-native';
-import Button from './component/buttonFilter';
+import ButtonF from './component/buttonFilter';
 import { Container, Header, 
   Icon, Left, Body, Title } from 'native-base';
 const {width} = Dimensions.get("window");
@@ -27,27 +27,32 @@ export default class Filter extends Component {
         </Header>
         <ScrollView>
         <View style={styles.view}>
-                    <Button 
+                    <ButtonF
                     image={require('../image/mug.png')}
                     up='Bar & Hotels'
                     down='           12 Places'/>
-                  <Button image={require('../image/dining.png')}
+                  <ButtonF 
+                  image={require('../image/dining.png')}
                     up='Fine Dinning'
                     down='           15 Places'/>
                   </View>
                   <View style={styles.view}>
-                  <Button image={require('../image/kopi.png')}
+                  <ButtonF 
+                  image={require('../image/kopi.png')}
                     up='Cafes'
                     down='28 Places'/>
-                  <Button image={require('../image/nearby.png')}
+                  <ButtonF 
+                  image={require('../image/nearby.png')}
                     up='Naarby'
                     down='  34 Places'/>
                   </View>
                   <View style={styles.view}>
-                  <Button image={require('../image/foods.png')}
+                  <ButtonF 
+                  image={require('../image/foods.png')}
                     up='Fast Food'
                     down='        29 Places'/>
-                  <Button image={require('../image/pizza.png')}
+                  <ButtonF 
+                  image={require('../image/pizza.png')}
                     up='Featured Food'
                     down='            21 Places'/>
                   </View>

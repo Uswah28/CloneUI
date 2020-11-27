@@ -23,41 +23,27 @@ const CardMo = (props) => {
     )
 }
 const styles = StyleSheet.create({
-    view: {
-        marginLeft: 100
-      },
-      gambar:{
-        borderRadius: 10
-      },
-      txt3:{
-        fontSize: 20,
+    view: {marginLeft: 100},
+    gambar:{borderRadius: 10},
+    txt3:{fontSize: 20,
         fontFamily: 'mono',
         color:'#000',
         fontWeight: 'bold',
-        marginLeft: 10
-      },
-      rat:{
-        fontSize: 12,
-        color: '#bdbdbd',
-      },
-      btn:{
-        width: 40,
+        marginLeft: 10},
+    rat:{fontSize: 12,
+        color: '#bdbdbd'},
+    btn:{width: 40,
         height: 30,
         textAlign: "center",
-        borderRadius: 5
-      },
-      text:{
-        color:'white',
+        borderRadius: 5},
+    text:{color:'white',
         fontSize: 20,
         marginLeft: 2,
-        fontWeight: 'bold'
-      },
-      icon:{
-        color: '#00ddbf',
+        fontWeight: 'bold'},
+    icon:{color: '#00ddbf',
         fontSize: 20,
         marginTop: 25,
         marginLeft: -20,
-        fontFamily: 'mono'
-      },
+        fontFamily: 'mono'},
 })
 export default CardMo;

@@ -6,7 +6,6 @@ import {
 } from 'react-native';
 
 import { Button } from 'native-base';
-
 const ButtonF = (props) => {
     return (
       <Button style={styles.card}>
